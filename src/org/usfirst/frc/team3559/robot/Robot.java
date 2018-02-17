@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
+import org.usfirst.frc.team3559.robot.subsystems.Shooter;
 import org.usfirst.frc.team3559.robot.commands.NoAuto;
 import org.usfirst.frc.team3559.robot.subsystems.Blinkin;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
@@ -26,6 +26,7 @@ import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
 public class Robot extends TimedRobot {
 	public static final DriveBase drivebase = new DriveBase();
 	public static final Blinkin blinkin = new Blinkin();
+	public static final Shooter Shooter = new Shooter();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
