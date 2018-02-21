@@ -7,16 +7,16 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class HiShoot extends Command {
+public class MidShoot extends Command {
 
-    public HiShoot() {
+    public MidShoot() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.Shooter);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    boolean ShootHi = true;
+    boolean ShootMid = true;
     }
 
     // Called repeatedly when this Command is scheduled to run

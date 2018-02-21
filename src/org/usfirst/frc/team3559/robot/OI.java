@@ -44,8 +44,8 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
-		private Joystick gamepad = new Joystick (0);
-		private Joystick gamepad2 = new Joystick (1);
+		Joystick gamepad = new Joystick (0);
+		Joystick gamepad2 = new Joystick (1);
 		Button lTrigger = new JoystickButton(gamepad, 5);
 		Button rTrigger = new JoystickButton(gamepad, 6);
 		Button greenA2 = new JoystickButton(gamepad2, 1);
@@ -56,7 +56,10 @@ public class OI {
 		public OI() {
 			lTrigger.whileHeld(new SloGear());
 			rTrigger.whileHeld(new HiGear());
-			greenA2.whenPressed(new ChangeColor());
+			greenA2.whenPressed(new LowShoot());
+			redB2.whenPressed(new MidShoot());
+			yellowY2.whenPressed(new HiShoot());
+			
 		}
 
 
