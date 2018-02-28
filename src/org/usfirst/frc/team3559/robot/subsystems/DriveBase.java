@@ -16,13 +16,6 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-//import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-//import com.ctre.phoenix.motorcontrol.NeutralMode;
-//import com.ctre.phoenix.motorcontrol.ControlMode;
-
-/**
- *
- */
 
 public class DriveBase extends Subsystem {
 
@@ -31,8 +24,7 @@ public class DriveBase extends Subsystem {
 	private DifferentialDrive driveBase;
 	private Timer m_timer = new Timer();
 	private ADXRS450_Gyro gyro;
-	//private boolean brake = true;						//May not be needed??
-	private double speedModifier = -0.8;					//Adjust the max input for speed limiting.
+	private double speedModifier = -0.75;					//Adjust the max input for speed limiting.
 	private double Kp = 0.03;
 	private double angle;
 	
@@ -47,8 +39,7 @@ public class DriveBase extends Subsystem {
 		m_rearRight = new WPI_TalonSRX(4);
 		SpeedControllerGroup sc_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
 		
-		DifferentialDrive driveBase
-				= new DifferentialDrive(sc_left, sc_right);
+		DifferentialDrive driveBase = new DifferentialDrive(sc_left, sc_right);
 		driveBase.setSafetyEnabled(false);
 		
 		gyro = new ADXRS450_Gyro();
@@ -85,7 +76,7 @@ public class DriveBase extends Subsystem {
      * Code to drive with gamepad
      */
     public void drive(Joystick gamepad) {
-    	drive(speedModifier*gamepad.getY(), speedModifier*gamepad.getRawAxis(3));
+    	drive(speedModifier*gamepad.getY(), speedModifier*gamepad.getRawAxis(5));
     }
     
     public void modifySpeed(double newSpeed) {
