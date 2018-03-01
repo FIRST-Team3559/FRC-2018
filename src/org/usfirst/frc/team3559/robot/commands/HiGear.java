@@ -21,6 +21,7 @@ public class HiGear extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.drivebase.drive(Robot.m_oi.getLeftSpeed(), Robot.m_oi.getRightSpeed());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,10 +31,12 @@ public class HiGear extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.drivebase.modifySpeed(0.75);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }
