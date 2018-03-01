@@ -18,5 +18,13 @@ public class OI {
 		public Joystick getJoystick() {
 			return gamepad;
 		}
+		
+		public double getLeftSpeed() {
+			return gamepad.getY();
+		}
+		
+		public double getRightSpeed() {
+			return gamepad.getRawAxis(5);
+		}
 
 }

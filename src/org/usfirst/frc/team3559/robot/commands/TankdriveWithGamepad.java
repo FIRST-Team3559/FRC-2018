@@ -13,7 +13,7 @@ public class TankdriveWithGamepad extends Command {
     }
 
     protected void execute() {
-    	Robot.drivebase.drive(Robot.m_oi.getJoystick());
+    	Robot.drivebase.drive(Robot.m_oi.getLeftSpeed(), Robot.m_oi.getRightSpeed());
     }
 
     protected boolean isFinished() {
