@@ -7,7 +7,7 @@
 
 package org.usfirst.frc.team3559.robot;
 
-
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -16,8 +16,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3559.robot.commands.NoAuto;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
 
+
 public class Robot extends TimedRobot {
+	
+	
 	public static final DriveBase drivebase = new DriveBase();
+	CameraServer cameraserver = CameraServer.getInstance();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
@@ -27,7 +31,9 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new NoAuto());
+		
 		SmartDashboard.putData("Auto mode", m_chooser);
+		cameraserver.startAutomaticCapture(0);
 	}
 
 	@Override
