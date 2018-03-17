@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3559.robot.commands.NoAuto;
-import org.usfirst.frc.team3559.robot.subsystems.CameraServo;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
 import org.usfirst.frc.team3559.robot.subsystems.Shooter;
 import org.usfirst.frc.team3559.robot.subsystems.Blinkin;
@@ -26,7 +25,6 @@ public class Robot extends TimedRobot {
 	
 	public static final DriveBase drivebase = new DriveBase();
 	CameraServer cameraserver = CameraServer.getInstance();
-	public static final CameraServo cameraservo = new CameraServo();
 	public static OI m_oi;
 	public static final Shooter shooter = new Shooter();
 	public static final Blinkin Blinkin = new Blinkin();
