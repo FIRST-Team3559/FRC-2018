@@ -20,10 +20,8 @@ import org.usfirst.frc.team3559.robot.subsystems.Shooter;
 import org.usfirst.frc.team3559.robot.subsystems.Blinkin;
 import org.usfirst.frc.team3559.robot.subsystems.Feeder;
 
-
 public class Robot extends TimedRobot {
-	
-	
+
 	public static final DriveBase drivebase = new DriveBase();
 	CameraServer cameraserver = CameraServer.getInstance();
 	public static final CameraServo cameraservo = new CameraServo();
@@ -38,7 +36,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new NoAuto());
-		
+
 		SmartDashboard.putData("Auto mode", m_chooser);
 		cameraserver.startAutomaticCapture(0);
 	}
@@ -77,7 +75,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		
+
 	}
 
 	@Override
