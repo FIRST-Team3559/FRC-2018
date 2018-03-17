@@ -1,2 +1,8 @@
 /bin/
 .classpath
+.project
+build.xml
+sysProps.xml
+sysProps.xml.orig
+/build/
+/.settings/
