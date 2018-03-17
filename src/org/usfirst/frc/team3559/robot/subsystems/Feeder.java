@@ -8,9 +8,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Feeder extends Subsystem {
-	private Spark FlipMotor = new Spark(9);
-	private Spark Feed1 = new Spark(10);
-	private Spark Feed2 = new Spark(11);
+	private Spark FlipMotor = new Spark(7);
+	private Spark feedMotorLeft = new Spark(5);
+	private Spark feedMotorRight = new Spark(6);
+	private double feedMotorSpeed = 0.8;
 	public boolean Lift = false;
 
     // Put methods for controlling this subsystem
@@ -21,37 +22,41 @@ public class Feeder extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
 
-public void Lift() {
-	Feed1.set(0.5);
-	Feed2.set(0.5);
-	Timer.delay(0.5);
-	Feed1.set(0.0);
-	Feed2.set(0.0);
-	Timer.delay(0.1);
-	FlipMotor.set(0.6);
-	Timer.delay(1.0);
-	FlipMotor.set(0.0);
-	Lift = true;
-}
-public void Lower() {
-	Feed1.set(0.5);
-	Feed2.set(0.5);
-	Timer.delay(0.5);
-	Feed1.set(0.0);
-	Feed2.set(0.0);
-	Timer.delay(0.1);
-	FlipMotor.set(-0.6);
-	Timer.delay(1.0);
-	FlipMotor.set(0.0);
-	Lift = false;
-}
-public void Judge() {
-	if(Lift = true) {
-		Lower();
-	}else {
-	if(Lift = false) {
-		Lift();
-					}	
+    public void Lift() {
+    	FlipMotor.set(0.6);
+    	Timer.delay(1.0);
+    	FlipMotor.set(0.0);
+    	Lift = true;
+    }
+    
+    public void Lower() {
+    	FlipMotor.set(-0.6);
+    	Timer.delay(1.0);
+    	FlipMotor.set(0.0);
+    	Lift = false;
+    }
+    
+    public void FeedIn() {
+    	feedMotorLeft.set(feedMotorSpeed);
+    	feedMotorRight.set(-feedMotorSpeed);
+    	Timer.delay(0.2);
+    	feedMotorLeft.set(0.0);
+    	feedMotorRight.set(0.0);
+    }
+    
+    public void FeedOut() {
+    	feedMotorLeft.set(-feedMotorSpeed);
+    	feedMotorRight.set(feedMotorSpeed);
+    	Timer.delay(0.2);
+    	feedMotorLeft.set(0.0);
+    	feedMotorRight.set(0.0);
+    }
+    
+    public void Judge() {
+    	if(Lift == true) {
+    		Lower();
+    	}else {
+    		Lift();	
 			}
 	}
 
