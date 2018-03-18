@@ -15,6 +15,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3559.robot.commands.NoAuto;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of e4dc7ec... 3/15/2018
 
 public class Robot extends TimedRobot {
 
