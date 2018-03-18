@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
 
 public class OI {
+<<<<<<< HEAD
 	Joystick gamepad = new Joystick(0);
 	Joystick gamepad2 = new Joystick(1);
 	Button lTrigger = new JoystickButton(gamepad, 5);
@@ -52,3 +53,27 @@ public class OI {
 /**
  * @return True if the DPad is pushed right, False if it is not pressed
  */
+=======
+		Joystick gamepad = new Joystick (0);
+		Button lTrigger = new JoystickButton(gamepad, 5);
+		Button rTrigger = new JoystickButton(gamepad, 6);
+		
+		public OI() {
+			lTrigger.whileHeld(new SloGear());
+			rTrigger.whileHeld(new HiGear());
+		}
+		
+		public Joystick getJoystick() {
+			return gamepad;
+		}
+		
+		public double getLeftSpeed() {
+			return gamepad.getY();
+		}
+		
+		public double getRightSpeed() {
+			return gamepad.getRawAxis(5);
+		}
+
+}
+>>>>>>> parent of e4dc7ec... 3/15/2018

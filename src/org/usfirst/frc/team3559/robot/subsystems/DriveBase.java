@@ -10,6 +10,7 @@ package org.usfirst.frc.team3559.robot.subsystems;
 
 import org.usfirst.frc.team3559.robot.commands.TankdriveWithGamepad;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -23,6 +24,7 @@ public class DriveBase extends Subsystem {
 	private WPI_TalonSRX m_rearLeft, m_rearRight;
 	private SpeedControllerGroup sc_right;
 	public DifferentialDrive driveBase;
+	private Servo testServo;
 	private double speedModifier = 0.75;					//Adjust the max input for speed limiting.
 
 
@@ -39,6 +41,9 @@ public class DriveBase extends Subsystem {
 		driveBase = new DifferentialDrive(sc_left, sc_right);
 		driveBase.setSafetyEnabled(true);
 		
+		testServo = new Servo(0);
+		testServo.set(speedModifier);
+	
 	}
 		
     public void initDefaultCommand() {
@@ -56,5 +61,6 @@ public class DriveBase extends Subsystem {
        
     public void modifySpeed(double newSpeed) {
     	this.speedModifier = newSpeed;
+    	this.testServo.set(newSpeed);  	
     }   
 }
