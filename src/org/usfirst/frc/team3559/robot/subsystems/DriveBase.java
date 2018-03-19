@@ -47,5 +47,9 @@ public class DriveBase extends Subsystem {
     public void stop() {
     	drivebase.tankDrive(0.0, 0.0);
     }
+    
+    public void modifySpeed(double newSpeedModifier) {
+    	this.speedModifier = newSpeedModifier;
+    }
 }
 
