@@ -16,10 +16,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3559.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
 import org.usfirst.frc.team3559.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team3559.robot.subsystems.Feeder;
 
 public class Robot extends TimedRobot {
 	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static DriveBase drivebase = new DriveBase();
+	public static Feeder feeder = new Feeder();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
