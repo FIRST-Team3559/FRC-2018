@@ -10,7 +10,6 @@ package org.usfirst.frc.team3559.robot;
 import org.usfirst.frc.team3559.robot.commands.EjectCube;
 import org.usfirst.frc.team3559.robot.commands.HiGear;
 import org.usfirst.frc.team3559.robot.commands.SloGear;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
