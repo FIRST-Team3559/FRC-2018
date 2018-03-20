@@ -3,6 +3,7 @@ package org.usfirst.frc.team3559.robot.subsystems;
 import org.usfirst.frc.team3559.robot.commands.DriveTankStyle;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -51,5 +52,28 @@ public class DriveBase extends Subsystem {
     public void modifySpeed(double newSpeedModifier) {
     	this.speedModifier = newSpeedModifier;
     }
+    public void AutoF(double timeLength) {
+    	drivebase.tankDrive(-0.6, 0.6);
+    	Timer.delay(2.0);
+    	drivebase.tankDrive(0.0, 0.0);
+    }
+    public void AutoB(double timeLength) {
+    	drivebase.tankDrive(0.6, -0.6);
+    	Timer.delay(2.0);
+    	drivebase.tankDrive(0.0, 0.0);
+    }
+    public void AutoL(double timeLength) {
+    	drivebase.tankDrive(-0.6, 0.0);
+    	Timer.delay(1.0);
+    	drivebase.tankDrive(0.0, 0.0);
+    }
+    public void AutoR(double timeLength) {
+    	drivebase.tankDrive(0.0, 0.6);
+    	Timer.delay(1.0);
+    	drivebase.tankDrive(0.0, 0.0);
+    }
 }
+
+
+
 
