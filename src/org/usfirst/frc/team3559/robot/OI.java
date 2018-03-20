@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public class OI {
+public class OI {    
 	private Joystick gamepad = new Joystick(0);
 	private Joystick gamepad1 = new Joystick(1);
 	Button lshoulder1 = new JoystickButton(gamepad, 5);
