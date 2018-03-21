@@ -9,6 +9,9 @@ package org.usfirst.frc.team3559.robot;
 
 import org.usfirst.frc.team3559.robot.commands.EjectCube;
 import org.usfirst.frc.team3559.robot.commands.HiGear;
+import org.usfirst.frc.team3559.robot.commands.JudgeJudy;
+import org.usfirst.frc.team3559.robot.commands.LightDown;
+import org.usfirst.frc.team3559.robot.commands.LightUp;
 import org.usfirst.frc.team3559.robot.commands.SloGear;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -24,11 +27,16 @@ public class OI {
 	Button lshoulder1 = new JoystickButton(gamepad, 5);
 	Button rshoulder1 = new JoystickButton(gamepad, 6);
 	Button greenA1 = new JoystickButton(gamepad1, 1);
-	
+	Button redB1 = new JoystickButton(gamepad1, 2);
+	Button Start1 = new JoystickButton(gamepad1, 7);
+	Button Select1 = new JoystickButton(gamepad1, 8);
 	public OI() {
 		lshoulder1.whileHeld(new SloGear());
 		rshoulder1.whileHeld(new HiGear());
 		greenA1.whileHeld(new EjectCube());
+		redB1.whenPressed(new JudgeJudy());
+		Start1.whenPressed(new LightUp());
+		Select1.whenPressed(new LightDown());
 	}
 	
 	public double getLeftStick() {

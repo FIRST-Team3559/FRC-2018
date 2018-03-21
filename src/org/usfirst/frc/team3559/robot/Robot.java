@@ -19,12 +19,15 @@ import org.usfirst.frc.team3559.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
 import org.usfirst.frc.team3559.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team3559.robot.subsystems.Feeder;
+import org.usfirst.frc.team3559.robot.subsystems.TheSubsystem;
+
 
 public class Robot extends TimedRobot {
 	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static DriveBase drivebase = new DriveBase();
 	public static Feeder feeder = new Feeder();
 	CameraServer cameraserver = CameraServer.getInstance();
+	public static TheSubsystem TheSubsystem = new TheSubsystem();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
