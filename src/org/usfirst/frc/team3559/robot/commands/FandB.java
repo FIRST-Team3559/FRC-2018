@@ -7,21 +7,23 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutoForward extends Command {
+public class FandB extends Command {
 
-    public AutoForward() {
+    public FandB() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.drivebase);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(2.0);
+    	setTimeout(4.0);
+    	//setTimeout(2*drivetime);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.drivebase.AutoF();
+    	Robot.drivebase.AutoB();
     }
 
     // Make this return true when this Command no longer needs to run execute()

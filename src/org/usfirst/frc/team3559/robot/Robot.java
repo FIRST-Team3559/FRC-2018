@@ -15,6 +15,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3559.robot.commands.AutoForward;
+import org.usfirst.frc.team3559.robot.commands.AutoBackwards;
+import org.usfirst.frc.team3559.robot.commands.FandB;
 import org.usfirst.frc.team3559.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
 import org.usfirst.frc.team3559.robot.subsystems.ExampleSubsystem;
@@ -39,6 +41,8 @@ public class Robot extends TimedRobot {
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new ExampleCommand());
 		m_chooser.addObject("My Auto", new AutoForward());
+		m_chooser.addObject("DriveBackwards", new AutoBackwards());
+		m_chooser.addObject("Drive Forward-Backwards", new FandB());
 		SmartDashboard.putData("Auto mode", m_chooser);
 		cameraserver.startAutomaticCapture(0);
 	}

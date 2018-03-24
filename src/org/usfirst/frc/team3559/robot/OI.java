@@ -31,6 +31,9 @@ public class OI {
 		greenA1.whileHeld(new EjectCube());
 	}
 	
+	public double drivetime = 4.0;
+	//Try to use drivetime to determine auto commands.
+	
 	public double getLeftStick() {
 		return gamepad.getY();
 	}

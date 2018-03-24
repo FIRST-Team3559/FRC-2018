@@ -52,21 +52,21 @@ public class DriveBase extends Subsystem {
     public void modifySpeed(double newSpeedModifier) {
     	this.speedModifier = newSpeedModifier;
     }
+    
     public void AutoF() {
      	drivebase.tankDrive(0.7, 0.7);
-    	
     }
-    public void AutoB(double timeLength) {
-    	drivebase.tankDrive(0.6, -0.6);
-    	Timer.delay(2.0);
-    	drivebase.tankDrive(0.0, 0.0);
+    
+    public void AutoB() {
+    	drivebase.tankDrive(-0.6, -0.6);
     }
-    public void AutoL(double timeLength) {
+    
+    public void AutoL() {
     	drivebase.tankDrive(-0.6, 0.0);
     	Timer.delay(1.0);
     	drivebase.tankDrive(0.0, 0.0);
     }
-    public void AutoR(double timeLength) {
+    public void AutoR() {
     	drivebase.tankDrive(0.0, 0.6);
     	Timer.delay(1.0);
     	drivebase.tankDrive(0.0, 0.0);

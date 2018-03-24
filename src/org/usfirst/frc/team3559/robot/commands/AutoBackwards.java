@@ -1,15 +1,16 @@
 package org.usfirst.frc.team3559.robot.commands;
 
 import org.usfirst.frc.team3559.robot.Robot;
+//import org.us
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class AutoForward extends Command {
+public class AutoBackwards extends Command {
 
-    public AutoForward() {
+    public AutoBackwards() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.drivebase);
     }
@@ -17,11 +18,12 @@ public class AutoForward extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	setTimeout(2.0);
+    	//setTimeout(drivetime);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivebase.AutoF();
+    	Robot.drivebase.AutoB();
     }
 
     // Make this return true when this Command no longer needs to run execute()
