@@ -13,6 +13,10 @@ public class Feeder extends Subsystem {
 	private Spark FlipMotor = new Spark(7);
 	private Spark feedMotorLeft = new Spark(5);
 	private Spark feedMotorRight = new Spark(6);
+	//private Spark shootMotorBottomLeft = new Spark();
+	//private Spark shootMotorTopLeft = new Spark();
+	//private Spark shootMotorBottomRight = new Spark();
+	//private Spark shootMotorTopRight = new Spark();
 	public boolean Lift = false;
 
     // Put methods for controlling this subsystem
@@ -59,6 +63,10 @@ public class Feeder extends Subsystem {
     	}else {
     		Lift();	
 			}
-	}
-
+    }
+    
+    public void AutoShoot (double speedValue) {
+    	feedMotorLeft.set(speedValue);
+    }
+	
 }
