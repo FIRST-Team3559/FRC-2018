@@ -17,7 +17,7 @@ public class AutoBackwards extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(2.0);
+    	setTimeout(1.7);
     	//setTimeout(drivetime);
     }
 

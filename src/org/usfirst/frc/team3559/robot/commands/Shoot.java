@@ -7,33 +7,30 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class FandB extends Command {
+public class Shoot extends Command {
 
-    public FandB() {
+    public Shoot() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.drivebase);
+        requires(Robot.shooter);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(4.0);
-    	//setTimeout(2*drivetime);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivebase.AutoF();
-    	Robot.drivebase.AutoB();
+    	Robot.shooter.SpinUp(Robot.m_oi.getRightTrigger());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.drivebase.stop();
+    	Robot.shooter.StopAllMotors();
     }
 
     // Called when another command which requires one or more of the same
