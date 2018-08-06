@@ -2,9 +2,7 @@ package org.usfirst.frc.team3559.robot.subsystems;
 
 import org.usfirst.frc.team3559.robot.Robot;
 import org.usfirst.frc.team3559.robot.commands.GetCube;
-
 import edu.wpi.first.wpilibj.DigitalInput;
-//import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Spark;
 //import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -28,9 +26,7 @@ public class Feeder extends Subsystem {
     }
 
     public void Lift(double speedValue) {   	
-    	while (liftLimit.get()) {
-    		FlipMotor.set(-speedValue);
-    	}
+   		FlipMotor.set(-speedValue);
     }
     	
     

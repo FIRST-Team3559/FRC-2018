@@ -21,7 +21,7 @@ public class GoingDown extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.feeder.Lower(0.85);
+    	Robot.feeder.Lower(0.99);
     }
 
     // Make this return true when this Command no longer needs to run execute()

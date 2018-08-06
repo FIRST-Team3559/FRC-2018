@@ -14,7 +14,7 @@ public class Shooter extends Subsystem {
 	private Spark RightShooterB = new Spark(2); //Reminder this is 2
 	private Spark LeftShooterA = new Spark(3);
 	private Spark RightShooterA = new Spark(4);
-	private double speedLimiter = 0.55;				//must be a value between 0 and 1
+	private double speedLimiter = 0.60;				//must be a value between 0 and 1
 	
 	// Put methods for controlling this subsystem
     // here. Call these from Commands.
