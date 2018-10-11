@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.Encoder;
 
 /**
  *
@@ -17,8 +16,6 @@ public class DriveBase extends Subsystem {
 	private WPI_TalonSRX rf_driveMotor, rr_driveMotor;
 	private SpeedControllerGroup sc_right;
 	public DifferentialDrive drivebase;
-	Encoder encL = new Encoder(1,2,false,Encoder.EncodingType.k4X);
-	Encoder encR = new Encoder(3,4,false,Encoder.EncodingType.k4X);
 	
 	private double speedModifier = 0.7;
 	
@@ -60,15 +57,6 @@ public class DriveBase extends Subsystem {
      	drivebase.tankDrive(0.7, 0.7);
     }
     
-    public void AutoFEnc() {
-    	encL.reset();
-    	encR.reset();
-    	do {
-    		drivebase.tankDrive(0.7, 0.7);
-    	}while(encL.getDistance()<50.0);
-    		drivebase.tankDrive(0.0, 0.0);
-    }
-    
     public void AutoB() {
     	drivebase.tankDrive(-0.6, -0.6);
     }
@@ -82,25 +70,6 @@ public class DriveBase extends Subsystem {
     	drivebase.tankDrive(0.0, 0.6);
     	Timer.delay(1.0);
     	drivebase.tankDrive(0.0, 0.0);
-    }
-    
-    public void Null() {//
-    	drivebase.tankDrive(0.0,0.0);//
-    }//
-    public void Encoders() {
-    	encL.setMaxPeriod(1.0);
-    	encL.setMinRate(10);
-    	encL.setDistancePerPulse(5);
-    	encL.setReverseDirection(true);
-    	encL.setSamplesToAverage(7);
-    	
-    	encR.setMaxPeriod(1.0);
-    	encR.setMinRate(10);
-    	encR.setDistancePerPulse(5);
-    	encR.setReverseDirection(true);
-    	encR.setSamplesToAverage(7);
-    	
-    	encR.reset();
     }
 }
 

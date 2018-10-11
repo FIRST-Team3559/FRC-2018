@@ -15,10 +15,8 @@ public class AutoForward extends Command {
     }
 
     // Called just before this Command runs the first time
-    protected void initialize () {
-    	setTimeout(1.7);
-    	//protected void initialize(double drivetime){
-    		//setTimeout(drivetime);
+    protected void initialize() {
+    	setTimeout(2.0);
     }
 
     // Called repeatedly when this Command is scheduled to run

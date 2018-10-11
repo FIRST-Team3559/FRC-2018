@@ -1,44 +1,38 @@
 package org.usfirst.frc.team3559.robot.commands;
 
-import org.usfirst.frc.team3559.robot.Robot;
-//import org.us
-
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team3559.robot.Robot;
 
 /**
  *
  */
-public class AutoBackwards extends Command {
+public class AutoShoot extends Command {
 
-    public AutoBackwards() {
+    public AutoShoot() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.drivebase);
+       requires(Robot.feeder);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(2.0);
-    	//setTimeout(drivetime);
+    	//Robot.feeder.AutoShoot(double speedValue);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivebase.AutoB();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.drivebase.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

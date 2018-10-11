@@ -13,29 +13,28 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc.team3559.robot.commands.AutoForward;
 import org.usfirst.frc.team3559.robot.commands.AutoBackwards;
-import org.usfirst.frc.team3559.robot.commands.NullAuto;
+import org.usfirst.frc.team3559.robot.commands.FandB;
+import org.usfirst.frc.team3559.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3559.robot.subsystems.DriveBase;
+import org.usfirst.frc.team3559.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team3559.robot.subsystems.Feeder;
-import org.usfirst.frc.team3559.robot.subsystems.Shooter;
-import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.Spark;
 
 public class Robot extends TimedRobot {
+<<<<<<< HEAD
 	public String ourSwitch = "UNKNOWN";
 	public String theirSwitch = "UNKNOWN";
 	public String middleScale = "UNKNOWN";
 	public String ourStartPos = "UNKNOWN";
+=======
+	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+>>>>>>> parent of eb2fe0f... working 30mar 12:09
 	public static DriveBase drivebase = new DriveBase();
 	public static Feeder feeder = new Feeder();
-	public static Shooter shooter = new Shooter();
 	CameraServer cameraserver = CameraServer.getInstance();
 	public static OI m_oi;
-	private Spark blinkin= new Spark(0);
-	
-	//use this if using an auto variable
-		//public double drivetime=1.7;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -47,9 +46,10 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI();
-		m_chooser.addDefault("Move Forward", new AutoForward());
-		m_chooser.addObject("No Auto", new NullAuto());
+		m_chooser.addDefault("Default Auto", new ExampleCommand());
+		m_chooser.addObject("My Auto", new AutoForward());
 		m_chooser.addObject("DriveBackwards", new AutoBackwards());
+		m_chooser.addObject("Drive Forward-Backwards", new FandB());
 		SmartDashboard.putData("Auto mode", m_chooser);
 		cameraserver.startAutomaticCapture(0);
 	}
@@ -105,6 +105,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
+<<<<<<< HEAD
 			getGameData();
 			
 			
@@ -122,6 +123,8 @@ public class Robot extends TimedRobot {
 				//}
 			}**/
 		
+=======
+>>>>>>> parent of eb2fe0f... working 30mar 12:09
 		m_autonomousCommand = m_chooser.getSelected();
 
 		switch (this.ourStartPos) {
