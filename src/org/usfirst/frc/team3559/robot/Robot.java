@@ -108,7 +108,7 @@ public class Robot extends TimedRobot {
 			getGameData();
 			
 			
-			if(gameData.length()>0) {
+/**			if(gameData.length()>0) {
 				if(gameData.length()>=8) {
 					blinkin.set(-0.23);//set blue
 				}else {
@@ -120,13 +120,13 @@ public class Robot extends TimedRobot {
 			//}else {
 					//run right auto
 				//}
-			}
+			}**/
 		
 		m_autonomousCommand = m_chooser.getSelected();
 
 		switch (this.ourStartPos) {
 		
-			case "LEFT":
+			/**case "LEFT":
 				//m_autonomousCommand = NEW LEFT COMMAND pass in the this.ourSwitch
 				break;
 			case "RIGHT":
@@ -134,7 +134,7 @@ public class Robot extends TimedRobot {
 				break;
 			deafult:
 				//m_autonomousCommand = NEW UNKNOWN COMMAND pass in the this.ourSwitch
-				break;
+				break;**/
 		}
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
